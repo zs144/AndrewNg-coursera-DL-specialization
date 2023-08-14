@@ -214,6 +214,7 @@ def plot_decision_boundary(model, X, y):
     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
     plt.ylabel('x2')
     plt.xlabel('x1')
+    plt.gca().set_box_aspect(1)
     plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
     plt.show()
     
@@ -241,6 +242,7 @@ def load_dataset():
     test_X, test_Y = sklearn.datasets.make_circles(n_samples=100, noise=.05)
     # Visualize the data
     plt.scatter(train_X[:, 0], train_X[:, 1], c=train_Y, s=40, cmap=plt.cm.Spectral);
+    plt.gca().set_box_aspect(1)
     train_X = train_X.T
     train_Y = train_Y.reshape((1, train_Y.shape[0]))
     test_X = test_X.T
