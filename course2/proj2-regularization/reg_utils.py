@@ -331,6 +331,7 @@ def load_2D_dataset():
     test_X = data['Xval'].T
     test_Y = data['yval'].T
 
+    plt.gca().set_box_aspect(1)
     plt.scatter(train_X[0, :], train_X[1, :], c=train_Y, s=40, cmap=plt.cm.Spectral);
-    
+
     return train_X, train_Y, test_X, test_Y
